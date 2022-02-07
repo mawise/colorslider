@@ -1,0 +1,30 @@
+<html>
+<head>
+  <style>
+  input.slider {
+    width:500;
+    height: 30;
+  }
+  </style>
+
+</head>
+<body>
+<svg width=500 height=500>
+<circle cx=250 cy=250 r=200 id="circle" />
+</svg><br/>
+<input type="range" min="0" max="255" value="0" class="slider" id="red" onchange="changeRGB()" oninput="changeRGB()"></br>
+<input type="range" min="0" max="255" value="0" class="slider" id="green" onchange="changeRGB()" oninput="changeRGB()"><br/>
+<input type="range" min="0" max="255" value="0" class="slider" id="blue" onchange="changeRGB()" oninput="changeRGB()"><br/>
+  <script>
+function changeRGB(x) {
+  var col, r, g, b;
+  r = document.getElementById("red").value;
+  g = document.getElementById("green").value;
+  b = document.getElementById("blue").value;
+  col = "rgb(" + r + "," + g + "," + b + ")";
+  colorCircle = document.getElementById("circle");
+  colorCircle.style.fill = col;
+}
+  </script>
+</body>
+</html>
